@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4376401649204735567}
   - component: {fileID: 2290185962312541037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Caminhao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2741413094282478499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3092670231082220885}
   - component: {fileID: 2736205260953319339}
   - component: {fileID: 4005623139887914341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.064
   m_TagString: Untagged
   m_Icon: {fileID: 0}
