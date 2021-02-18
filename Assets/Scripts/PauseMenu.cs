@@ -20,12 +20,15 @@ public class PauseMenu : MonoBehaviour
     {
         IsPaused = !IsPaused;
 
+        Time.timeScale = IsPaused ? 0f : 1f;
+
         _pausedScreen.SetActive(IsPaused);
         _unpausedScreen.SetActive(!IsPaused);
     }
 
     public void GoToTitleScreen()
     {
+        Time.timeScale = 1f;
         _sceneManagerBehaviour.LoadTitleScreen();
     }
 
