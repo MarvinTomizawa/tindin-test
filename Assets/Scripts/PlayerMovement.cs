@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] [Range(1f, 10f)] private float speed = 1f;
     [SerializeField] [Range(1f, 10f)] private float sprintSpeed = 1f;
     [SerializeField] private Transform _camera = null;
+    [SerializeField] private Animator _animator;
 
     private CharacterController _controller;
     
-
     public void Start()
     {
         _controller = gameObject.GetComponent<CharacterController>();
@@ -17,13 +17,16 @@ public class PlayerMovement : MonoBehaviour
     public void Update()
     {
         Vector3 inputDirection = GetInputDirection();
+        bool isSprinting = Input.GetButton("Sprint");
+
+        AddAnimation(inputDirection, isSprinting);
 
         if (PlayerHasMovement(inputDirection))
         {
             Vector3 direction = GetCameraDirection(inputDirection);
 
             RotatePlayer(direction);
-            MovePlayer(direction);
+            MovePlayer(direction, isSprinting);
         }
     }
 
@@ -40,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
         return direction.magnitude > 0;
     }
 
+    private void AddAnimation(Vector3 direction, bool isSprinting)
+    {
+        _animator.SetFloat("MoveSpeed", direction.magnitude);
+        _animator.SetBool("Sprinting", isSprinting);
+    }
+
     private Vector3 GetCameraDirection(Vector3 inputDirection)
     {
         float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
@@ -52,9 +61,9 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(direction);       
     }
 
-    private void MovePlayer(Vector3 direction)
+    private void MovePlayer(Vector3 direction, bool isSprinting)
     {
-        if (Input.GetButton("Sprint"))
+        if (isSprinting)
         {
             _controller.Move(direction * sprintSpeed * Time.deltaTime);
             return;
