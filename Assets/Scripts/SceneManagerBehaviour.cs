@@ -7,14 +7,15 @@ public class SceneManagerBehaviour : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private bool _startWithTransition;
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject _loadingScreen;
+    [SerializeField] private float transitionSpeed = 2f;
 
-    private void Start()
+    private void Awake()
     {
-        _animator = GetComponent<Animator>();
-
         if (_startWithTransition)
         {
+            _loadingScreen.SetActive(true);
             _animator.SetTrigger("FadeOut");
         }
     }
@@ -31,24 +32,18 @@ public class SceneManagerBehaviour : MonoBehaviour
 
     private void LoadSceneWithLoading(string sceneName)
     {
-        Time.timeScale = 1f;
         StartCoroutine(LoadSceneAsync(sceneName));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        _loadingScreen.SetActive(true);
+
         _animator.SetTrigger("FadeIn");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(transitionSpeed);
 
-        var operation = SceneManager.LoadSceneAsync(sceneName);
-
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-            _slider.value = progress;
-            yield return null;
-        }
+        SceneManager.LoadScene(sceneName);
     }
 
     public void CloseGame()
