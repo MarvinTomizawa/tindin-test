@@ -2,8 +2,9 @@
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject PausedScreen;
-    [SerializeField] private GameObject UnpausedScreen;
+    [SerializeField] private GameObject _pausedScreen;
+    [SerializeField] private GameObject _unpausedScreen;
+    [SerializeField] private GameObject _sceneManagerBehaviour;
 
     private bool IsPaused = false;
 
@@ -19,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     {
         IsPaused = !IsPaused;
 
-        PausedScreen.SetActive(IsPaused);
-        UnpausedScreen.SetActive(!IsPaused);
+        _pausedScreen.SetActive(IsPaused);
+        _unpausedScreen.SetActive(!IsPaused);
     }
 }
