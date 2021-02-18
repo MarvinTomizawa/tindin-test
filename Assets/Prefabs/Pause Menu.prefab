@@ -251,7 +251,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6032729326543245162}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3592259913096975011}
+        m_MethodName: GoToTitleScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &661414580893607812
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,8 +802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad940e21614dc9141b02a61aeeba2a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PausedScreen: {fileID: 5418907693183694803}
-  UnpausedScreen: {fileID: 3684827010508730924}
+  _pausedScreen: {fileID: 5418907693183694803}
+  _unpausedScreen: {fileID: 3684827010508730924}
+  _sceneManagerBehaviour: {fileID: 0}
 --- !u!1 &5293857204647334629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,7 +1170,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5209000711618928910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3592259913096975011}
+        m_MethodName: CloseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7314019854724248437
 GameObject:
   m_ObjectHideFlags: 0
