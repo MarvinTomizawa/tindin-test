@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1837246760534971223}
   - component: {fileID: 2215307431349070164}
   - component: {fileID: 5696049529905845689}
-  - component: {fileID: 4855048052815768088}
+  - component: {fileID: 6333504218147080972}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -112,17 +112,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!154 &4855048052815768088
-TerrainCollider:
+--- !u!65 &6333504218147080972
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4855048052815768089}
   m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_TerrainData: {fileID: 0}
-  m_EnableTreeColliders: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.019999994, z: 1.4210854e-16}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9021205867203072727
 GameObject:
   m_ObjectHideFlags: 0

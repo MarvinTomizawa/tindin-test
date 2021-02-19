@@ -6,14 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] [Range(1f, 10f)] private float sprintSpeed = 1f;
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Animator _animator;
-
-    private CharacterController _controller;
+    [SerializeField] private CharacterController _controller;
     
-    public void Start()
-    {
-        _controller = gameObject.GetComponent<CharacterController>();
-    }
-
     public void Update()
     {
         Vector3 inputDirection = GetInputDirection();
