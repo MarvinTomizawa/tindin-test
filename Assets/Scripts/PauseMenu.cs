@@ -8,6 +8,11 @@ public class PauseMenu : MonoBehaviour
 
     private bool IsPaused = false;
 
+    private void Start()
+    {
+        Cursor.visible = IsPaused;
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Pause"))
